@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BotPrototypeEmptyMVC.Models.TelegramResponse>
+
+@{
+    ViewBag.Title = "Here's what .NET Telegram BOT told me";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Raw(Html.Encode(item.JsonData))
+        </td>
+    </tr>
+}
+</table>
